@@ -1,0 +1,20 @@
+%p
+  %b Email:
+  = user.email
+
+%p
+  %b Fullname:
+  = user.fullname
+
+%p
+  %b Sign up date:
+  = user.created_at
+
+%p
+  %b Last login:
+  = user.last_sign_in_at
+
+%p
+  %b Total reviews
+  = user.reviews.count
+
