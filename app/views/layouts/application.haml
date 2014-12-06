@@ -25,4 +25,7 @@
     .container-fluid
       .row
         .col-lg-12
+          %p#notice= notice
+          %p#error= flash[:error]
+          %p#alert= flash[:alert]
           = yield
