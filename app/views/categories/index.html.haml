@@ -1,19 +1,24 @@
-%h1 Listing categories
+.view-title
+  Listing categories
 
-%table.table
-  %tr
-    %th Name
-    %th
-    %th
-    %th
-
-  - categories.each do |category|
+- if categories.empty?
+  No categories available.
+  %br
+- else
+  %table.table-def
     %tr
-      %td= category.name
-      %td= link_to 'Show', category
-      %td= admin_only_link_to 'Edit', edit_category_path(category)
-      %td= admin_only_link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' }
+      %th.th Name
+      %th
+      %th
+      %th
+
+    - categories.each do |category|
+      %tr
+        %td= category.name
+        %td= link_to 'Show', category, class: 'btn-show'
+        %td= admin_only_link_to 'Edit', edit_category_path(category), class: 'btn-edit'
+        %td= admin_only_link_to 'Destroy', category, class: 'btn-destroy', method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= admin_only_link_to 'New Category', new_category_path
+= admin_only_link_to 'New Category', new_category_path, class: 'btn-new'

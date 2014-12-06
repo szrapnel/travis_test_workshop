@@ -1,21 +1,26 @@
-%h1 Listing products
+.view-title
+  Listing products
 
-%table
-  %tr
-    %th Title
-    %th Description
-    %th Price
-    %th
-    %th
-    %th
-
-  - products.each do |product|
+- if products.empty?
+  No products available.
+  %br
+- else
+  %table.table-def
     %tr
-      %td= product.title
-      %td= product.description
-      %td= product.price
-      %td= link_to 'Show', category_product_path(product.category, product)
-      %td= owner_only_link_to product, 'Edit', edit_category_product_path(product.category, product)
-      %td= owner_only_link_to product, 'Destroy', category_product_path(product.category, product), method: :delete, data: { confirm: 'Are you sure?' }
+      %th Title
+      %th Description
+      %th Price
+      %th
+      %th
+      %th
+
+    - products.each do |product|
+      %tr
+        %td= product.title
+        %td= product.description
+        %td= product.price
+        %td= link_to 'Show', category_product_path(product.category, product), class: 'btn-show'
+        %td= owner_only_link_to product, 'Edit', edit_category_product_path(product.category, product), class: 'btn-edit'
+        %td= owner_only_link_to product, 'Destroy', category_product_path(product.category, product), class: 'btn-destroy', method: :delete, data: { confirm: 'Are you sure?' }
 
 %br

@@ -1,1 +1,104 @@
 @import "bootstrap";
+
+.my-btn {
+  @extend .btn;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+.btn-show {
+  @extend .my-btn;
+	@extend .btn-success;
+}
+
+.btn-edit {
+  @extend .my-btn;
+	@extend .btn-warning;
+}
+
+.btn-destroy {
+  @extend .my-btn;
+	@extend .btn-danger;	
+}
+
+.btn-new {
+  @extend .my-btn;
+	@extend .btn-info;
+}
+
+.btn-devise {
+  @extend .btn-new;
+}
+
+.btn-back {
+  @extend .my-btn;
+	@extend .btn-primary;
+}
+
+.btn-save {
+  @extend .my-btn;
+	@extend .btn-success;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #DCDCFA;
+ }
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #C8E6C8;
+}
+
+.table-def {
+  @extend .table;
+  @extend .table-striped;
+  @extend .table-hover;
+}
+
+#error_explanation {
+  @extend .alert;
+  @extend .alert-danger;
+  
+}
+
+.form-group {
+  border-radius: 5px;
+  color: white;
+  background-color: #428BCA;
+  background-color: #428BCA;
+  label {
+    margin-left: 5px;
+  }
+}
+
+.panel-body-primary {
+  @extend .panel-body;
+  background-color: #C8DDF0;
+}
+
+.subitem {
+  @extend .well;
+  @extend .well-sm;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+}
+
+.subitem-hover {
+  @extend .subitem;
+  background-color: #FFFFFF;
+}
+
+div.subitem-hover:hover{
+  background-color: #C8E6C8;
+}
+
+.view-title{
+  @extend .h1;
+  @extend .well;
+  text-align: center;
+}
+
+.right{
+  float :right;
+  text-align: right; 
+}
