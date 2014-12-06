@@ -1,14 +1,10 @@
-%p
-  %b Name:
+.view-title
+  Category:
   = category.name
 
-%p
-  - category.products.each do |product|
-    = product.title
+%br
 
-%p
-  %h3 New product
-  = render 'products/form'
+= super_panel('Products', products, 'This category has no products', 'New product', 'products/form')
 
 - if current_user_is_admin?
   = link_to 'Edit', edit_category_path(category)

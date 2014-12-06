@@ -1,0 +1,14 @@
+%p
+  %b Description:
+  = product.description
+%p
+  %b Price:
+  = product.price
+
+%p
+  %b Category:
+  = link_to product.category.name, category_path(category)
+
+%p
+  %b Added by:
+  = link_to_profile product.user

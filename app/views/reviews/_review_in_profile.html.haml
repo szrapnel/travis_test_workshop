@@ -1,4 +1,6 @@
-= review_in_profile.content
-= review_in_profile.rating
-= review_in_profile.created_at.strftime("%d-%m-%Y")
-
+.subitem
+  %b= show_rating review_in_profile
+  %em.right= review_in_profile.created_at
+  %br
+  %br
+  %p= review_in_profile.content

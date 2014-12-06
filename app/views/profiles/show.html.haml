@@ -1,24 +1,7 @@
-%p
-  %b Email:
-  = user.email
-
-%p
-  %b Fullname:
+.view-title
+  Profile:
   = user.fullname
 
-%p
-  %b Sign up date:
-  = user.created_at
+= display_partial('profile details', 'profile_details')
 
-%p
-  %b Last login:
-  = user.last_sign_in_at
-
-%p
-  %b Total reviews
-  = user.reviews.count
-
-%p
-  %b Last reviews
-  %p= show_last_reviews
-
+%p= show_last_reviews    

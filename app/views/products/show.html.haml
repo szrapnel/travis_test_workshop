@@ -1,21 +1,10 @@
-%p
-  %b Title:
+.view-title
+  Product:
   = product.title
-%p
-  %b Description:
-  = product.description
-%p
-  %b Price:
-  = product.price
 
-%p
-  %b Category
-  = product.category.name
+= display_partial('product details', 'product_details')
 
-%h3 Reviews
-= render 'reviews/form'
-
-= render reviews
+= super_panel('Reviews', reviews, 'This product has no reviews', 'New review', 'reviews/form')
 
 - if product.is_owned_by?(current_user)
   = link_to 'Edit', edit_category_product_path(category.id, product.id)

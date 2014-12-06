@@ -1,4 +1,7 @@
-%p= review.content
-%p
-  %b= review.rating
-  %em= review.author
+.subitem
+  %b= show_rating review
+  %em= link_to_profile review.user
+  %em.right= review.created_at
+  %br
+  %br
+  %p= review.content
