@@ -18,4 +18,11 @@ class Product < ActiveRecord::Base
       return sum.to_f/reviews.count
     end
   end
+
+  def is_owned_by?(user)
+    if user!=nil
+      return user_id!=nil && user.id!=nil && user_id==user.id
+    end
+    return false
+  end
 end
