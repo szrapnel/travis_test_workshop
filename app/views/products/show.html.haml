@@ -17,6 +17,7 @@
 
 = render reviews
 
-= link_to 'Edit', edit_category_product_path(category.id, product.id)
-\|
+- if product.is_owned_by?(current_user)
+  = link_to 'Edit', edit_category_product_path(category.id, product.id)
+  \|
 = link_to 'Back', category_products_path, class: 'btn btn-primary'
