@@ -3,8 +3,8 @@ class ProductsController < ApplicationController
   before_action :ensure_product_owner!, only: [:edit, :update, :destroy]
 
   expose(:category)
-  expose(:products)
-  expose(:product)
+  expose_decorated(:products)
+  expose_decorated(:product)
   expose(:review) { Review.new }
   expose_decorated(:reviews, ancestor: :product)
 

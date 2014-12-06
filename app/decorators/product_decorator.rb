@@ -10,4 +10,13 @@ class ProductDecorator < Draper::Decorator
   #     end
   #   end
 
+  def owner
+    u = product.user.decorate
+    u.fullname
+  end
+
+  def price
+    helpers.number_to_currency(product.price, unit: "")
+  end
+
 end

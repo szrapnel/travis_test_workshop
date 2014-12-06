@@ -3,6 +3,8 @@ class ReviewsController < ApplicationController
 
   expose(:review)
   expose(:product)
+  expose(:category)
+  expose_decorated(:reviews, ancestor: :product)
 
   def edit
   end
