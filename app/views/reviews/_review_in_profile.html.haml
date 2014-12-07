@@ -1,5 +1,6 @@
 .subitem
   %b= show_rating review_in_profile
+  = link_to review_in_profile.product.title, category_product_path(review_in_profile.product.category, review_in_profile.product)
   %em.right= review_in_profile.created_at
   %br
   %br
