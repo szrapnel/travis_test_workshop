@@ -86,6 +86,7 @@
 .subitem-hover {
   @extend .subitem;
   background-color: #FFFFFF;
+  cursor: pointer;
 }
 
 div.subitem-hover:hover{
@@ -105,4 +106,9 @@ div.subitem-hover:hover{
 
 td .my-btn {
   @extend .right;
+}
+
+.navbar-home {
+  @extend .navbar-brand;
+  cursor: pointer;
 }
