@@ -7,6 +7,8 @@ class Product < ActiveRecord::Base
   belongs_to :user
   has_many :reviews
 
+  before_destroy :destroy_reviews
+
   def average_rating 
     if reviews.empty?
       return 0
@@ -25,4 +27,10 @@ class Product < ActiveRecord::Base
     end
     return false
   end
+
+  private
+
+    def destroy_reviews
+      self.reviews.destroy_all
+    end
 end
