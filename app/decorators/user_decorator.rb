@@ -10,7 +10,11 @@ class UserDecorator < Draper::Decorator
   end
 
   def last_sign_in_at
-    user.last_sign_in_at.strftime(DATE_FORMAT)
+    if user.last_sign_in_at!=nil
+      user.last_sign_in_at.strftime(DATE_FORMAT)
+    else
+      '-----'
+    end
   end
 
 end

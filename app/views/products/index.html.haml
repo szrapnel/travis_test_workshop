@@ -18,13 +18,13 @@
 
     - products.each do |product|
       %tr
-        %td= product.title
+        %td= link_to product.title, category_product_path(product.category, product)
         %td= product.description
         %td= product.price
-        %td= product.category.name
+        %td= link_to product.category.name, product.category
         %td= product.reviews.count
-        %td= link_to 'Show', category_product_path(product.category, product), class: 'btn-show'
-        %td= owner_only_link_to product, 'Edit', edit_category_product_path(product.category, product), class: 'btn-edit'
         %td= owner_only_link_to product, 'Destroy', category_product_path(product.category, product), class: 'btn-destroy', method: :delete, data: { confirm: 'Are you sure?' }
+        %td= owner_only_link_to product, 'Edit', edit_category_product_path(product.category, product), class: 'btn-edit'
+        %td= link_to 'Show', category_product_path(product.category, product), class: 'btn-show'
 
 %br

@@ -7,6 +7,6 @@
 = super_panel('Reviews', reviews, 'This product has no reviews', 'New review', 'reviews/form')
 
 = owner_only_link_to product, 'Edit', edit_category_product_path(category.id, product.id), class: 'btn-edit'
-= link_to 'Back', category_products_path, class: 'btn-back'
+= link_to 'Back', category, class: 'btn-back'
 
 .right= owner_only_link_to product, 'Destroy', category_product_path(product.category, product), class: 'btn-destroy', method: :delete, data: { confirm: 'Are you sure? This delete all reviews for this product too.' }

@@ -6,6 +6,9 @@ $( document ).ready(function() {
     $(".subitem-hover").click(function() {
   		item_click_redirect(this)
   	})
+    $(".navbar-brand").click(function() {
+      window.location = "/"
+    })
 });
 
 function item_click_redirect(item) {

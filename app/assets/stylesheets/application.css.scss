@@ -99,6 +99,10 @@ div.subitem-hover:hover{
 }
 
 .right{
-  float :right;
+  float: right;
   text-align: right; 
+}
+
+td .my-btn {
+  @extend .right;
 }
