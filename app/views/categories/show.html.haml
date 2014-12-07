@@ -8,3 +8,5 @@
 
 = admin_only_link_to 'Edit', edit_category_path(category), class: 'btn-edit'
 = link_to 'Back', categories_path, class: 'btn-back'
+
+.right= admin_only_link_to 'Destroy', category, class: 'btn-destroy', method: :delete, data: { confirm: 'Are you sure? This delete all products in this category too.' }

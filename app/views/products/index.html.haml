@@ -10,6 +10,8 @@
       %th Title
       %th Description
       %th Price
+      %th Category
+      %th Reviews
       %th
       %th
       %th
@@ -19,6 +21,8 @@
         %td= product.title
         %td= product.description
         %td= product.price
+        %td= product.category.name
+        %td= product.reviews.count
         %td= link_to 'Show', category_product_path(product.category, product), class: 'btn-show'
         %td= owner_only_link_to product, 'Edit', edit_category_product_path(product.category, product), class: 'btn-edit'
         %td= owner_only_link_to product, 'Destroy', category_product_path(product.category, product), class: 'btn-destroy', method: :delete, data: { confirm: 'Are you sure?' }

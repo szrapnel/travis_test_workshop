@@ -17,7 +17,7 @@
         %td= category.name
         %td= link_to 'Show', category, class: 'btn-show'
         %td= admin_only_link_to 'Edit', edit_category_path(category), class: 'btn-edit'
-        %td= admin_only_link_to 'Destroy', category, class: 'btn-destroy', method: :delete, data: { confirm: 'Are you sure?' }
+        %td= admin_only_link_to 'Destroy', category, class: 'btn-destroy', method: :delete, data: { confirm: 'Are you sure? This delete all products in this category too.' }
 
 %br
 
