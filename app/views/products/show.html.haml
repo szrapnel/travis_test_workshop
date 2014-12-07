@@ -6,7 +6,5 @@
 
 = super_panel('Reviews', reviews, 'This product has no reviews', 'New review', 'reviews/form')
 
-- if product.is_owned_by?(current_user)
-  = link_to 'Edit', edit_category_product_path(category.id, product.id)
-  \|
-= link_to 'Back', category_products_path, class: 'btn btn-primary'
+= owner_only_link_to product, 'Edit', edit_category_product_path(category.id, product.id), class: 'btn-edit'
+= link_to 'Back', category_products_path, class: 'btn-back'

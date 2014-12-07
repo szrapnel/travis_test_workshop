@@ -6,7 +6,5 @@
 
 = super_panel('Products', products, 'This category has no products', 'New product', 'products/form')
 
-- if current_user_is_admin?
-  = link_to 'Edit', edit_category_path(category)
-  \|
-= link_to 'Back', categories_path, class: 'btn btn-primary'
+= admin_only_link_to 'Edit', edit_category_path(category), class: 'btn-edit'
+= link_to 'Back', categories_path, class: 'btn-back'
